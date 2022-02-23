@@ -1,0 +1,36 @@
+<div>
+    <div>
+        <p class="details">Subject: {{subject}}</p>
+        <p class="details">Time Remaining: {{totalTime}}:{{secRemaining}}</p>
+        <p class="details">Name: {{studentName}}</p>
+    </div>
+    <br>
+    <div class="main container" [hidden]="hide">
+        <div *ngFor="let obj of result;let i = index">
+            <label for="addquestiontext" >Question {{i+1}}:</label>
+            <span id = "marks">{{marksPerQuestion}}</span>
+            <br>
+            <span id="addquestiontext"   name="text">{{obj.QUESTIONTEXT}}</span><br>
+            <img [src]="obj.QUESTIONIMAGE" *ngIf="obj.QUESTIONIMAGE" alt = "img"><br> 
+            <input type="radio" [name]="'option'+i" id = "option1" (click)="setAnswer(i,obj.OPTION1)">
+            <span>1. {{obj.OPTION1}}</span><br>
+            <input type="radio" [name]="'option'+i" id = "option2" (click)="setAnswer(i,obj.OPTION2)">
+            <span>2. {{obj.OPTION2}}</span><br>
+            <input type="radio" [name]="'option'+i" id = "option3" (click)="setAnswer(i,obj.OPTION3)">
+            <span>3. {{obj.OPTION3}}</span><br>
+            <input type="radio" [name]="'option'+i" id = "option4" (click)="setAnswer(i,obj.OPTION4)">
+            <span>4. {{obj.OPTION4}}</span> <br>
+            <hr>
+        </div>
+        <br>
+        <button (click)="submit()" class ="btn content-btn btn-primary" >Submit Text</button>
+    </div>  
+</div>
+
+<div class="main container" [hidden]="!hide">
+    <h1 style="text-align: center;">{{feedbacktext}}</h1>
+    <h1 style="text-align: center;">You have got {{percentageOptain}}%</h1>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+<div class="container main" [hidden]="hide">
+    <form (ngSubmit)="submit()">
+        <input id = "name-input" name="name" placeholder = "Enter your name" [(ngModel)] = "name">
+
+        <label for = "quiz" class="item-label">Select Quiz: </label>
+            <select name="quiz" id="quiz" class="item-input"  (change)="changeQuiz($event.target)">
+                <option  *ngFor="let quiz of quizzes;let i= index" class="item-input" value="quiz">{{i+1}} . {{quiz.SUBJECT}}</option><br>
+            </select><br>
+        <button type="submit" class ="btn content-btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="instruction" [hidden]="!hide">
+    <h1>{{time}}</h1>
+    <p>Don't refresh the page, you will be redirected to quiz page</p>
+</div>

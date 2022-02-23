@@ -1,0 +1,37 @@
+<div class="container main">
+    <div>
+        <form  (ngSubmit)="submit()"  >
+            <div class="mb-3">
+            <label for="noofQuestions" class="item-label" >No of Ques: </label>
+            <input type="number" min="0" name="noofQuestions" [disabled]="quizId?true:false" class="item-input" id="noofQuestions" [(ngModel)]= "pattern.noofques" autofocus = "true" required><br>
+            <label for = "marksperque" class="item-label" >Marks per Que: </label>
+            <input type = "number" min="0" [disabled]="quizId?true:false" name="marksperque" class="item-input" id = "marksperque" [(ngModel)] = "pattern.marksperque" (error)="pattern.marksperque && pattern.marksperque" [required]="true" [required]="true"><br>
+            <label for="timeallocated" class="item-label">Total Time Allowed:  </label>
+            <input type="text" min="0" [disabled]="quizId?true:false" name="timeallocated" class="item-input" id = "timeallocated" [(ngModel)]="pattern.timeallocated" [required]="true" >
+            <br> 
+            <button type="submit" [hidden]="quizId?true:false" [disabled]="click" class ="btn content-btn btn-primary" (click)="submit()">Submit</button>
+            </div>
+        </form>
+        <div>
+            <span>Set Feedback:</span><br>
+            <div *ngFor="let item of feedbacks;let i = index">
+                <span>Feedback {{i+1}}:</span>
+                <span>{{item.feedbacktext}}</span><br>
+                <span>Minimum %: </span>
+                <span>{{item.mingrade}}</span><br>
+                <span>Maximum %: </span>
+                <span>{{item.maxgrade}}</span>
+                <br>
+            </div>
+            
+            <label for="text-input" class="item-label">Feedback Text :</label>
+            <textarea rows="5" cols="50"  type="text" name="feedbacktext" id = "text-input" [(ngModel)]="feedbacktext"></textarea>
+            <label for="mingrade" class="item-label">Minimum % : </label>
+            <input type="number" name="mingrade" id = "mingrade" class="item-input" [(ngModel)]="mingrade">
+            <label for ="maxgrade" class="item-label">Maximum % :</label>
+            <input type="number" name = "maxgrade" id = "maxgrade" class="item-input" [(ngModel)]="maxgrade">
+            <button class ="btn content-btn btn-success" (click)="addFeedback()">Add Feedback</button>
+        
+        </div>
+    </div>
+</div>

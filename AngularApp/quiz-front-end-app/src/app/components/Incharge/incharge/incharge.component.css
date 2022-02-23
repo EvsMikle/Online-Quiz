@@ -1,0 +1,21 @@
+.containe{
+    height: 30px;
+    width: 100%;
+}
+.main{
+    margin-top: 20px;
+    width: 80%;
+    margin-left:10%;
+}
+.main-btn{
+    margin: 20px;
+    height: fit-content;
+}
+span{
+    margin-top: 0px;
+    margin-inline: 10px;
+    float: right;
+    background-color: aquamarine;
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
+}

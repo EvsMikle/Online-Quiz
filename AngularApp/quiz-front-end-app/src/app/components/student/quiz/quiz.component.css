@@ -1,0 +1,42 @@
+.main{
+    width: 80%;
+    margin-inline: 10%;
+    margin-bottom: 20px;
+}
+.details{
+    width: 100%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    text-align: center;
+}
+#marks{
+    width: 80%;
+    text-align: end;
+}
+#addquestiontext{
+    width: 20%;
+}
+input{
+    margin:10px;
+}
+@media screen and (min-width:800px) {
+    .main{
+        margin-left: 25%;
+        width: 50%;
+    }
+    .details{
+        width: 30%;
+        margin-right: 2.5%;
+        display: inline-block;
+    }
+}
+
+button{
+    width: 50%;
+    margin-inline: 25%;
+}
+img{
+    width: 60%;
+    margin-inline: 20%;
+    height: 30%;
+}

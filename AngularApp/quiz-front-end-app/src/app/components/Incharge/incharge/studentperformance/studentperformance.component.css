@@ -1,0 +1,12 @@
+h6,p{
+    text-align: center;
+}
+
+.container{
+    padding: 5px;
+}
+
+.main{
+    width: 70%;
+    margin-inline: 15%;
+}

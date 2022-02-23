@@ -1,0 +1,33 @@
+.main{
+    margin-top: 10px;
+    width: 100%;
+}
+.main-btn{
+    margin: 20px;
+    height: fit-content;
+}
+.item-label{
+    margin: 1%;
+    width: 40%;
+    text-align: end;
+}
+.item-input{
+    margin: 1%;
+    width: 16%;
+    margin-right: 30%;
+}
+button{
+    margin: 1%;
+    margin-left:38%;
+    width: 20%;
+}
+#text-input{
+    width: 50%;
+}
+@media screen and (min-width:800px) {
+    .main{
+        margin-top: 20px;
+        width: 60%;
+        margin-inline:20%;
+    }
+}

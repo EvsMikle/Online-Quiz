@@ -1,0 +1,32 @@
+<div class="main row">
+    <button class="btn main-btn btn-primary col btn-sm" (click)="loginpage()">Teacher Login</button>
+    <button class="btn main-btn btn-success col btn-sm" (click)="signuppage()" [autofocus]="true">Teacher Signup</button>
+</div>
+<div class="content">
+
+    <div [hidden]="hide" class="login-form">   
+        <form (ngSubmit)="submit()">
+            <div class="mb-3">
+                <label class="item-label" for="loginusername" >Username: </label>
+                <input type="text" name="username" class="item-input" id="loginusername" [(ngModel)]= "loginDetails.username" autofocus = "true" [required]="true" autocomplete="username"><br>
+                <label for = "loginpassword" class="item-label" >Password: </label>
+                <input type = "password" name="password" class="item-input" id = "loginpassword" [(ngModel)] = "loginDetails.password" [required]="true" autocomplete="current-password"><br>
+                <button type="submit" [disabled]="click" class ="btn content-btn btn-primary btn-center">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div [hidden]="!hide" class="login-form">
+        <form (ngSubmit)="submit()"  >
+            <div class="mb-3">
+            <label for="signupusername" class="item-label" >Username: </label>
+            <input type="text" name="username" class="item-input" id="signupusername" [(ngModel)]= "signupDetails.username" autofocus = "true" [required]="true" autocomplete="username"><br>
+            <label for = "signuppassword" class="item-label">Password: </label>
+            <input type = "password" name="password" class="item-input" id = "signuppassword" [(ngModel)] = "signupDetails.password" [required]="true" autocomplete="current-password"><br>
+            <label for="subject" class="item-label">Subject:  </label>
+            <input type="text" name="subject" class="item-input" id = "subject" [(ngModel)]="signupDetails.subject" [required]="true" >
+            <br> 
+            <button type="submit" [disabled]="click" class ="btn content-btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

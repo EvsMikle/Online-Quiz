@@ -1,0 +1,14 @@
+<div class="main">
+    <div class="row ">
+        <h6 class="col container border border-dark">Student Name</h6>
+        <h6 class="col container border border-dark">Marks</h6>
+        <h6 class="col container  border border-dark">Percentage Earn</h6>
+    </div>
+
+        <div class="row" *ngFor="let res of performances">
+            <p class=" border container border-dark col">{{res.NAME}}</p>
+            <p class="col container border border-dark">{{res.STUDENTMARKS}}</p>
+            <p class="col container border border-dark">{{res.PERCENTAGE}}</p>
+    </div>
+</div>
+

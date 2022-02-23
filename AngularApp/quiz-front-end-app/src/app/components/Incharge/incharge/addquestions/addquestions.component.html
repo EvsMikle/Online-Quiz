@@ -1,0 +1,41 @@
+<div class= "container main">
+    <form>
+            <label for="addquestiontext" class="text-label">Question Text :</label><br>
+            <textarea rows="6" cols="50" id="addquestiontext" class="text-input"  name="text" placeholder="Enter your question" [(ngModel)]="questiontext"></textarea>
+            <br>
+            <label for="questionimage" class="item-lable">Select Image:</label>
+            <input type="file" (change)="changeImage($event)" accept="image/*" id="questionimage" name="image"><br>
+            <label for="option1" class="item-label">option1:  </label>
+            <input type="text" name="option1" class="item-input" id = "option1" [(ngModel)]="optionarr[0]" [required]="true" >
+            <br>
+            <label for="option2" class="item-label">option2:  </label>
+            <input type="text" name="option2" class="item-input" id = "option2" [(ngModel)]="optionarr[1]" [required]="true" >
+            <br>
+            <label for="option3" class="item-label">option3:  </label>
+            <input type="text" name="option3" class="item-input" id = "option3" [(ngModel)]="optionarr[2]" [required]="true" >
+            <br>
+            <label for="option4" class="item-label">option4:  </label>
+            <input type="text" name="option4" class="item-input" id = "option4" [(ngModel)]="optionarr[3]" [required]="true" >
+            <br>
+            <label for = "correctoption" class="item-label">Select correctoption: </label>
+            <select name="correctoption" id="correctoption" class="item-input"  (change)="changeCorrect($event)">
+                <option  *ngFor="let option of optionarr" class="item-input" value="option">{{option}}</option><br>
+            </select><br>
+            <button type="submit" class ="btn content-btn btn-primary" (click)="submit()">Submit</button>
+    </form>
+    
+    <span>Added Questions: </span><br><br>
+    
+    <div *ngFor="let obj of result">
+        <label for="addquestiontext" class="text-label">Question Text :</label><br>
+        <p id="addquestiontext" class="text-input"  name="text">{{obj.QUESTIONTEXT}}</p>
+        <label for="questionimage" class="item-lable">Selected Image:</label>
+        <img [src]="obj.QUESTIONIMAGE" *ngIf="obj.QUESTIONIMAGE" alt = "img"><br>
+        <p >Option 1: {{obj.OPTION1}}</p>
+        <p >option 2: {{obj.OPTION2}}</p>
+        <p >option 3: {{obj.OPTION3}}</p>
+        <p >option 4: {{obj.OPTION4}}</p>
+        <p>Correct Answer: {{obj.CORRECTOPTION}}</p>
+        <hr>
+    </div>
+</div>

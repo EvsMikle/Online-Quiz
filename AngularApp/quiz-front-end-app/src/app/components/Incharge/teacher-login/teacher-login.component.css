@@ -1,0 +1,37 @@
+.main{
+    margin-top: 50px;
+    width: 60%;
+    margin-left: 20%;
+}
+a{
+    margin: 10%;
+}
+.main-btn{
+    margin: 10%;
+}
+
+label{
+    display: inline-block;
+}
+.item-label{
+    margin: 15px;
+    width: 30%;
+    text-align: end;
+}
+.item-input{
+    margin: 15px;
+    width: 60%;
+    margin-right: 0px;
+}
+.content{
+    width: 40%;
+    margin-top: 50px;
+    margin-left: 30%;
+}
+.content-btn{
+    margin-top: 30px;
+    width: 60%;
+    margin-left: 20%;
+}
+
+
